@@ -89,6 +89,8 @@ def main():
     if option.lower() in ("y", "yes"):
         print(f"[{bcolors.WARNING}!{bcolors.ENDC}] Playing audio back!")
         playback(args.sink, args.outfile, verbose=args.verboseMode)
+    print(f"[{bcolors.OK_GREEN}I{bcolors.ENDC}] Disconnecting")
+    disconnect(BluezTarget(args.address, args.address_type), verbose=args.verboseMode)
     print(f"[{bcolors.OK_GREEN}I{bcolors.ENDC}] Exiting")
 
 

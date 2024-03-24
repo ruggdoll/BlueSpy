@@ -109,6 +109,10 @@ def connect(target: BluezTarget, timeout: int = 2, verbose: bool = False):
         shlex.split(f"bluetoothctl connect {str(target.address)}"), verbose=verbose
     )
 
+def disconnect(target: BluezTarget, verbose: bool = False):
+    run_and_check(
+        shlex.split(f"bluetoothctl disconnect {str(target.address)}"), verbose=verbose
+    )
 
 def normalize_address(target: BluezTarget) -> str:
     return str(target.address).upper().replace(":", "_")
