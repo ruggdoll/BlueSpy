@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-from core import connect, BluezTarget, BluezAddressType, pair, record, playback
+from core import connect, BluezTarget, BluezAddressType, pair, record, playback, disconnect
 import time
 
 
