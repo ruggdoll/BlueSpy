@@ -59,6 +59,7 @@ Note: The script might prompt for superuser permissions to modify the configurat
 + `connect.py` utilizes the command-line tool `bluetoothctl` to initiate a quick scan (necesary for BlueZ) and establish a connection to the device. The exact commands used are in the `connect` function inside `core.py`.
 + `just_record.py` utilizes the command-line tools `pactl` and `parecord` to search for the device in the system's audio sources (it must function as a microphone) and initiate a recording session. The exact commands used are in the `record` function inside `core.py`.
 + The `playback` function inside `core.py` executes `paplay` to play back the captured audio.
++ `disconnect.py` utilizes the command-line tool `bluetoothctl` to disconnect the device. The exact commands used are in the `disconnect` function inside `core.py`.
 
 If you encounter issues with any of the phases, examine the commands in `core.py` and try to execute them in a shell. This will provide more information on what may be failing.
 

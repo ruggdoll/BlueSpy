@@ -26,9 +26,16 @@ def main():
         choices=list(BluezAddressType),
         default=BluezAddressType.BR_EDR,
     )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        help="VerbosityLevel (True,False)",
+        dest="verboseMode",
+        default="False",
+    )
     args = parser.parse_args()
 
-    pair(BluezTarget(args.address, args.address_type), verbose=True)
+    pair(BluezTarget(args.address, args.address_type), verbose=args.verboseMode)
 
 
 if __name__ == "__main__":

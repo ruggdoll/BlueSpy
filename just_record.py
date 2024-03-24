@@ -21,9 +21,16 @@ def main():
         dest="outfile",
         default="recording.wav",
     )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        help="VerbosityLevel (True,False)",
+        dest="verboseMode",
+        default="False",
+    )
     args = parser.parse_args()
 
-    record(BluezTarget(args.address), outfile=args.outfile, verbose=True)
+    record(BluezTarget(args.address), outfile=args.outfile, verbose=args.verboseMode)
 
 
 if __name__ == "__main__":
