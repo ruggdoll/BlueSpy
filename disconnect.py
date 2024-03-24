@@ -28,9 +28,9 @@ def main():
     parser.add_argument(
         "-v",
         "--verbose",
-        help="VerbosityLevel (True,False)",
+        help="activate verbose mode",
         dest="verboseMode",
-        default="False",
+        action = "store_true",
     )
     args = parser.parse_args()
 

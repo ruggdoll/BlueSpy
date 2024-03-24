@@ -27,7 +27,7 @@ def main():
         "--target-address",
         help="Target device MAC address",
         required=True,
-        dest="address",
+        dest="address"
     )
     parser.add_argument(
         "-t",
@@ -36,28 +36,28 @@ def main():
         dest="address_type",
         type=lambda t: BluezAddressType[t],
         choices=list(BluezAddressType),
-        default=BluezAddressType.BR_EDR,
+        default=BluezAddressType.BR_EDR
     )
     parser.add_argument(
         "-f",
         "--file",
         help="File to store recorded audio",
         dest="outfile",
-        default="recording.wav",
+        default="recording.wav"
     )
     parser.add_argument(
         "-s",
         "--sink",
         help="Sink to play the audio back",
         dest="sink",
-        default="alsa_output.pci-0000_00_05.0.analog-stereo",
+        default="alsa_output.pci-0000_00_05.0.analog-stereo"
     )
     parser.add_argument(
         "-v",
         "--verbose",
-        help="VerbosityLevel (True,False)",
+        help="activate verbose mode",
         dest="verboseMode",
-        default="False",
+        action = "store_true",
     )
 
     args = parser.parse_args()
